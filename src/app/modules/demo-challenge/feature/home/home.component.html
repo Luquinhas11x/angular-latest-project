@@ -1,0 +1,22 @@
+<ng-container *ngIf="vm$ | async as vm">
+
+  <div class="search-input">
+    <input type="text" placeholder="Search for challenge title..." [(ngModel)]="searchValue"
+      (ngModelChange)="searchChallenge(searchValue)">
+    <i class="fa-solid fa-magnifying-glass "></i>
+  </div>
+
+  <app-challenge-list *ngIf="vm.challenges && !vm.challengesError else challengeLoading" [challenges]="vm.challenges">
+  </app-challenge-list>
+
+  <div *ngIf="vm.challengesError as error">
+    <app-error @showState [challengeError]="error.message"></app-error>
+  </div>
+
+  <ng-template #challengeLoading>
+    <div class="challenge-cards" *ngIf="!vm.challengesError">
+      <app-skeleton-loading *ngFor="let _ of [].constructor(8)"></app-skeleton-loading>
+    </div>
+  </ng-template>
+
+</ng-container>

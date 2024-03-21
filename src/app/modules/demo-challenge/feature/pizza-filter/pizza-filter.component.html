@@ -1,0 +1,25 @@
+<ng-container *ngIf="vm$ | async as vm">
+
+  <div class="all-pizza-filter">
+    <div *ngFor="let category of vm.categories; let i = index">
+      <button class="all-pizza-filter__pizza-filter" (click)="change(category.name)">
+        {{ category.name }}
+      </button>
+    </div>
+  </div>
+
+  <app-challenge-list class="challenge-cards" *ngIf="vm.challenges && !vm.challengesError else challengeLoading"
+    [challenges]="vm.challenges">
+  </app-challenge-list>
+
+  <div *ngIf="vm.challengesError as error">
+    <app-error @showState [challengeError]="error.message" ></app-error>
+  </div>
+
+  <ng-template #challengeLoading>
+    <div class="challenge-cards" *ngIf="!vm.challengesError">
+      <app-skeleton-loading *ngFor="let _ of [].constructor(6)"></app-skeleton-loading>
+    </div>
+  </ng-template>
+
+</ng-container>

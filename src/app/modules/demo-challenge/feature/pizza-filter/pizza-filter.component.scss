@@ -1,0 +1,42 @@
+.challenge-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-message {
+  display: flex;
+  margin: 20px 0 0 20px;
+  color: #000956;
+}
+
+.all-pizza-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgba(214, 214, 214, 0.306);
+
+
+  &__pizza-filter {
+    text-decoration: none;
+    color: #000956;
+    background-color: rgba(214, 214, 214, 0.011);
+    padding: 20px 110px 20px 110px;
+    font-size: 22px;
+    transition: .3s;
+    cursor: pointer;
+  }
+
+  &__pizza-filter:focus {
+    border-bottom: black solid 2px;
+  }
+
+  &__pizza-filter:hover {
+    color: #00095695;
+  }
+}
+
+.card {
+  display: block;
+}

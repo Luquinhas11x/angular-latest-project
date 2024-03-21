@@ -1,0 +1,143 @@
+.main {
+  padding: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+
+  &__card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    min-height: 700px;
+    background: white;
+    border-radius: 7px;
+    box-shadow: 0 1px 3px rgba(255, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      padding: 60px 0 60px 0;
+      border-right: rgb(110, 107, 107) solid 1px;
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      padding: 60px 0 60px 0;
+
+      h1{
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+    }
+
+  }
+
+  &__card:hover {
+    cursor: pointer;
+    box-shadow: 0 14px 28px rgba(0, 81, 255, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+}
+
+.card-data {
+  padding: 10px 0 10px 30px;
+}
+
+.challengeImage {
+  width: 400px;
+  height: 200px;
+  border-radius: 7px;
+}
+
+.teste{
+    margin-bottom: 10px;
+}
+
+.sm {
+  text-align: center;
+  font-size: 1.1em;
+  width: 90%;
+  text-align: left;
+  padding-bottom: 2px;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.forComments {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 15px 0 0 0;
+
+
+  &__card {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    margin: 0 15px 20px 0;
+
+
+
+
+    &__double {
+      margin-left: 12px;
+      background-color: rgb(210, 210, 210);
+      width: 400px;
+      border-radius: 0.4em;
+
+
+    }
+
+    &__double h6 {
+      padding: 0 0 10px 10px;
+      font-size: 17px;
+    }
+
+    &__double p {
+      margin: 0 0 10px 0;
+      padding-left: 10px;
+      font-size: 20px;
+    }
+
+
+    &__cardImage {
+      flex-direction: column;
+      float: left;
+    }
+
+    &__cardImage img {
+      float: left;
+      height: 70px;
+      border-radius: 50%;
+      border: solid black 1px;
+    }
+  }
+
+
+}
+
+.link {
+  margin: 20px 0 20px 0;
+  padding: 15px 20px 15px 20px;
+  background: rgb(67, 67, 255);
+  color: white;
+  text-decoration: none;
+  border-radius: 7px;
+  transition: .5s;
+}
+
+.link:hover {
+  cursor: pointer;
+  background: rgb(18, 18, 208);
+}

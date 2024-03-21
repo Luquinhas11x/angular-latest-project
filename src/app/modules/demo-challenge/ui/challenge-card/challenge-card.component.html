@@ -1,0 +1,8 @@
+<div class="main" *ngIf="challenge">
+  <div class="main__card" (click)="challengeDetail(challenge.id)">
+    <img src="{{ challenge.image }}">
+    <h1 class="card-data">{{ challenge.title }}</h1>
+    <h4 class="card-data">{{ challenge.instructions }}</h4>
+    <h6 class="card-data">{{ challenge.pizzaCategory.name }}</h6>
+  </div>
+</div>

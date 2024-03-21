@@ -1,0 +1,30 @@
+<div class="main" *ngIf="challenge">
+  <div class="main__card">
+
+    <div class="main__card__left">
+      <h1 class="card-data title">{{ challenge.title }} - {{ challenge.pizzaCategory.name }}</h1>
+      <img class="card-data challengeImage" src="{{ challenge.image }}">
+        <h4 class="card-data sm"><i class="fa-regular fa-circle-check"></i> {{ challenge.instructions }}</h4>    
+        <h5 class="card-data sm"><i class="fa-regular fa-circle-check"></i> Objectives: {{challenge.learningObjectives }}</h5>
+        <h5 class="card-data sm"><i class="fa-regular fa-circle-check"></i> Criteria: {{ challenge.acceptanceCriteria }}</h5>
+        <h5 class="card-data sm"><i class="fa-regular fa-circle-check"></i> Skills: {{ challenge.requiredSkills }}</h5>
+    </div>
+
+    <div class="main__card__right">
+      <h1>Comments </h1>
+      <div class="forComments">
+        <div class="forComments__card" *ngFor="let comment of challenge.comments">
+          <div class="forComments__card__cardImage">
+            <img src="{{ comment.urlImage }}">
+          </div>
+          <div class="forComments__card__double">
+            <p class="forComments__card__name">{{comment.username}} </p>
+            <h6 class="forComments__card__text">{{comment.text}} </h6>
+          </div>
+        </div>
+      </div>
+      <a class="link" href="{{challenge.link}}" target="_blank">Go to GitHub</a>
+    </div>
+
+  </div>
+</div>

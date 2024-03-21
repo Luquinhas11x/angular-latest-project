@@ -1,0 +1,25 @@
+<ng-container class="main" *ngIf="vm$ | async as vm">
+
+  <h1 class="title">CHALLENGE DETAIL</h1>
+  <button class="btnBack" (click)="back()">
+    <span class="material-symbols-outlined">
+      arrow_back
+    </span>
+  </button>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,700,0,-25" />
+
+  <app-challenge-detail-card *ngIf="vm.challenges && !vm.challengesError else challengeLoading"
+    [challenge]="vm.challenges" @showState>
+  </app-challenge-detail-card>
+
+  <div *ngIf="vm.challengesError as error">
+    <app-error  [challengeError]="error.message" ></app-error>
+  </div>
+
+  <ng-template #challengeLoading>
+    <div class="challenge-cards" *ngIf="!vm.challengesError">
+      <app-skeleton-detail-loading *ngFor="let _ of [].constructor(1)"></app-skeleton-detail-loading>
+    </div>
+  </ng-template>
+</ng-container>
